@@ -1,11 +1,16 @@
 package com.ammyt.gangame.deals
 
-import android.app.Fragment
+import com.ammyt.commons.BaseFragment
+import com.ammyt.gangame.R
+
 
 /**
  * Created by ammyt on 23/10/17.
  */
 
-class DealsFragment : Fragment() {
+class DealsFragment : BaseFragment() {
 
+    override fun getLayoutResId(): Int {
+        return R.layout.fragment_deals
+    }
 }
