@@ -1,6 +1,7 @@
 package com.ammyt.gangame.rated
 
-import android.app.Fragment
+import android.support.v4.app.Fragment
+
 
 /**
  * Created by ammyt on 23/10/17.
