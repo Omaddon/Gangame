@@ -3,16 +3,19 @@
 
     <item
         android:id="@+id/action_top_rated"
-        android:title="@string/title_top_rated">
+        android:title="@string/title_top_rated"
+        android:icon="@drawable/ic_top_rated">
     </item>
 
     <item
         android:id="@+id/action_most_owned"
-        android:title="@string/title_most_owned">
+        android:title="@string/title_most_owned"
+        android:icon="@drawable/ic_most_owned">
     </item>
 
     <item
         android:id="@+id/action_deals"
-        android:title="@string/title_deals">
+        android:title="@string/title_deals"
+        android:icon="@drawable/ic_deals">
     </item>
 </menu>

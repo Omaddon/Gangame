@@ -46,7 +46,7 @@
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
+            app:layout_constraintEnd_toStartOf="@+id/labelPrice"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="DarkSouls 3"/>
@@ -59,6 +59,8 @@
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_steam_rating"
+            android:drawablePadding="4dp"
             app:layout_constraintStart_toStartOf="@+id/labelPublisher"
             app:layout_constraintTop_toBottomOf="@+id/labelPublisher"
             tools:text="50"/>
@@ -93,19 +95,20 @@
             tools:text="Valve"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/labelOwners"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_owners"
             app:layout_constraintBaseline_toBaselineOf="@+id/labelSteamRating"
             app:layout_constraintStart_toEndOf="@+id/labelSteamRating"
             tools:text="1200000"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/labelPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -119,7 +122,7 @@
             tools:text="$ 100.00"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/labelPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

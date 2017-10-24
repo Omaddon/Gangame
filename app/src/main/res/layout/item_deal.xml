@@ -73,6 +73,8 @@
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_metacritic_rating"
+            android:drawablePadding="4dp"
             app:layout_constraintStart_toStartOf="@+id/labelRatings"
             app:layout_constraintTop_toBottomOf="@+id/labelRatings"
             tools:text="89"/>
@@ -81,10 +83,12 @@
             android:id="@+id/labelSteamRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_steam_rating"
+            android:drawablePadding="4dp"
             app:layout_constraintStart_toEndOf="@+id/labelMetacriticScore"
             app:layout_constraintTop_toTopOf="@+id/labelMetacriticScore"
             tools:text="50"/>
