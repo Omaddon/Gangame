@@ -21,5 +21,5 @@ data class TopGame(
         @SerializedName("score_rank") val steamRating: Int,
         val owners: Int,
         val price: Float,
-        val thumb: String
+        var thumb: String
 )

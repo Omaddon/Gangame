@@ -1,6 +1,8 @@
 package com.ammyt.gangamesdk
 
+import com.ammyt.gangamesdk.Serializer.TopGameDeserializer
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import org.junit.Assert
 import org.junit.Test
 
@@ -87,12 +89,15 @@ class ModelUnitTest {
 
     @Test
     fun topGameParsingTest() {
-        val gson = Gson()
+        val gson = GsonBuilder()
+                .registerTypeAdapter(TopGame::class.java, TopGameDeserializer())
+                .create()
         val topGame = gson.fromJson(JSON_TOP_GAME, TopGame::class.java)
 
         Assert.assertEquals(topGame.title, "Counter-Strike")
         Assert.assertEquals(topGame.steamRating, 97)
         Assert.assertEquals(topGame.owners, 13364200)
         Assert.assertEquals(topGame.publisher, "Valve")
+        Assert.assertEquals(topGame.thumb, "http://cdn.akami.steamstatic.com/steam/apps/10/capsule_184x69.jpg")
     }
 }
