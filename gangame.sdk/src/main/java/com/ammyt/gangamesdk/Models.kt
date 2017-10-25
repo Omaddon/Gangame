@@ -18,8 +18,8 @@ data class Deal(
 data class TopGame(
         @SerializedName("name") val title: String,
         val publisher: String,
-        @SerializedName("score_rank") val steamRating: Int,
+        val steamRating: Int,
         val owners: Int,
-        val price: Float,
+        var price: Float,
         var thumb: String
 )

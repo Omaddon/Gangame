@@ -44,8 +44,9 @@ dependencies {
     compile project(':commons')
     kapt 'com.android.databinding:compiler:2.3.0'
 
-    mockCompile project(path: ':gangame.sdk', configuration: 'mockRelease')
-    prodCompile project(path: ':gangame.sdk', configuration: 'prodRelease')
+    implementation project(':gangame.sdk')
+    //mockCompile project(path: ':gangame.sdk', configuration: 'mockRelease')
+    //prodCompile project(path: ':gangame.sdk', configuration: 'prodRelease')
 }
 repositories {
     mavenCentral()

@@ -1,14 +1,16 @@
 package com.ammyt.gangame.owned
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.ammyt.gangame.BR
 import com.ammyt.commons.BaseListFragment
 import com.ammyt.commons.DataBindingRecyclerAdapter
-import com.ammyt.gangame.BR
 import com.ammyt.gangame.Deal
-import com.ammyt.gangame.R
 import com.ammyt.gangame.TopGame
+import com.ammyt.gangame.R
+import com.ammyt.gangame.data.GangameDataSource
 
 
 /**
@@ -21,6 +23,42 @@ class TopOwnedFragment : BaseListFragment() {
         return DataBindingRecyclerAdapter<TopGame>(BR.topGame, R.layout.item_top_game)
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        showMostOwnedGames()
+    }
+
+    private fun showMostOwnedGames() {
+        GangameDataSource
+                .getMostOwned()
+                .subscribe({ list ->
+                    replaceItems(list)
+                }, { error ->
+                    showError(error)
+                })
+    }
+
+    private fun showError(error: Throwable) {
+        error.printStackTrace()
+
+        view?.let {
+            Snackbar.make(view as View, R.string.error_request, Snackbar.LENGTH_LONG)
+                    .setAction(R.string.label_retry, { _: View -> showMostOwnedGames() })
+                    .show()
+        }
+    }
+
+    private fun replaceItems(list: List<TopGame>) {
+        with(listAdapter as DataBindingRecyclerAdapter<TopGame>) {
+            items.clear()
+            items.addAll(list)
+            notifyDataSetChanged()
+        }
+    }
+
+
+    /*
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,4 +78,5 @@ class TopOwnedFragment : BaseListFragment() {
                 "http://cdn.akami.steamstatic.com/steam/apps/10/capsule_184x69.jpg"
         ))
     }
+    */
 }
